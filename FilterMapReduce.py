@@ -1,0 +1,27 @@
+from functools import reduce
+
+numbers = [2, 3, 4, 6, 7, 8, 9, 10, 11]
+
+print("Filter the even number from the below list")
+print(numbers)
+print("Even numbers are :-")
+even = list(filter(lambda a: a % 2 == 0, numbers))
+print(even)
+print("double the even numbers :-")
+double = list(map(lambda a: a * 2, even))
+print(double)
+print("add all the doubles")
+totalsum = reduce(lambda x, y: x + y, double)
+print(totalsum)
+print("multiply all the doubles")
+multiplied = reduce(lambda a,b:a*b,double)
+print(multiplied)
+print("filter the odd numbers")
+odd = list(filter(lambda a: a % 2 != 0, numbers))
+print(odd)
+print("get the square of the odd numbers")
+square = list(map(lambda a: a ** 2, odd))
+print(square)
+print("Add all the  square numbers :-")
+oddtotalsum=reduce(lambda a,b:a+b,square)
+print(oddtotalsum)
