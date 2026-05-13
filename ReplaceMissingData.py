@@ -14,3 +14,5 @@ csv_file = csv_file.replace(
 )
 
 print(csv_file)
+csv_file.loc[csv_file["Age"] >=1, "Age"] = 20
+print(csv_file)
