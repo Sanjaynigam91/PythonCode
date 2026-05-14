@@ -1,0 +1,20 @@
+import pandas as pd
+
+data=pd.DataFrame({"days":[1,2,3,4,5,6],"Computer":[15,16,17,18,19,20],"Maths":[11,13,16,17,18,15]})
+print(data)
+print()
+print("**** Use of melt Function ****")
+result=pd.melt(data,id_vars=["days"],var_name="Subjects",value_name="Score")
+print(result)
+
+print("***** Use of pivot function *******")
+d1=pd.DataFrame({"days":[1,2,3,4,5,6],"Name":["Sanjay","Sanjay","Ajay","Sanjay","Ajay","Ajay"],"Computer":[15,16,17,18,19,20],"Maths":[11,13,16,17,18,15]})
+print(d1)
+res1=d1.pivot(index="days",columns="Name",values="Maths")
+print(res1)
+print()
+print("***** Use of pivot table function *******")
+d2=pd.DataFrame({"days":[1,1,1,1,2,2],"Name":["Sanjay","Sanjay","Ajay","Sanjay","Ajay","Ajay"],"Computer":[15,16,17,18,19,20],"Maths":[11,13,16,17,18,15]})
+print(d2)
+res2=d2.pivot_table(index="Name",columns="days",aggfunc="mean",margins=True)
+print(res2)
