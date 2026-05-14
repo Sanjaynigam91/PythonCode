@@ -1,0 +1,37 @@
+import pandas as pd
+
+data=pd.DataFrame({"Name":["a","b","c","d","a","a","a","b","b","c","c","d"],
+                   "Math":[30,35,25,40,45,50,41,20,28,42,48,21],
+                   "Computer":[20,30,40,50,10,25,35,45,23,33,43,26]})
+print(data)
+print("Use of group By")
+result=data.groupby("Name")
+for x,y in result:
+    print(x)
+    print(y)
+    print()
+
+print("Get Specific Student Details")
+res=result.get_group("a")
+print(res)
+print("Get Minimum value from each group")
+minResult=result.min()
+print(minResult)
+print("Get Maximum value from each group")
+maxResult=result.max()
+print(maxResult)
+print("Get Average value from each group")
+avgResult=result.mean()
+print(avgResult)
+print("Get Median value from each group")
+medianResult=result.median()
+print(medianResult)
+print("Get Standard Deviation from each group")
+stdResult=result.std()
+print(stdResult)
+print("Convert grouped data into list")
+lsResult=list(result)
+print(lsResult)
+print("Convert grouped data into tuple")
+tupResult=tuple(result)
+print(tupResult)
